@@ -14,7 +14,6 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import javax.annotation.Resource;
 import java.util.List;
 
 @RefreshScope
@@ -57,7 +56,7 @@ public class WorkerResource {
 		}
 		*/
 
-        logger.info("PORT = " + environment.getRequiredProperty("local.server.port"));
+        logger.info("PORT = " + environment.getProperty("local.server.port"));
         Worker obj = workerRepository.findById(id).get();
         return ResponseEntity.ok(obj);
     }
